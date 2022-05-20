@@ -1,5 +1,5 @@
 # ConversionAPI - **WIP**
-To convert Metric units to Imperial units and vice versa.
-Visual Studio 2022 => .net 6 
-SQL Server Management Studio 
-Back up DB file uploaded along with source code.
+1. To convert Metric units to Imperial units and vice versa.
+2. Visual Studio 2022 => .net 6 
+3. SQL Server Management Studio 
+4. Back up DB file uploaded along with source code.
