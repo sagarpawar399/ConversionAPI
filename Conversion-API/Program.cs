@@ -9,9 +9,10 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 // Add services to the container.
 builder.Services.AddScoped<ITemperatureConvertService, TemperatureConvertService>();
 builder.Services.AddScoped<ILengthConvertService, LengthConvertService>();
+builder.Services.AddScoped<IDataConvertService, DataConvertService>();
 builder.Services.AddScoped<ITemperatureConvertRepository, TemperatureConvertRepository>();
 builder.Services.AddScoped<ILengthConvertRepository, LengthConvertRepository>();
-builder.Services.AddScoped<ILengthConvertService, LengthConvertService>();
+builder.Services.AddScoped<IDataConvertRepository, DataConvertRepository>();
 builder.Services.AddScoped<ICacheService, CacheService>();
 builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
