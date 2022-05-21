@@ -20,7 +20,7 @@ namespace ConversionAPI.Services
         }
 
         /// <summary>
-        /// Converted temperature.
+        /// Converted length.
         /// </summary>
         /// <param name="from"></param>
         /// <param name="to"></param>
@@ -51,9 +51,6 @@ namespace ConversionAPI.Services
             }
 
             return Math.Round(valueToConvert, 2);
-        }
-
-
-       
+        }      
     }
 }

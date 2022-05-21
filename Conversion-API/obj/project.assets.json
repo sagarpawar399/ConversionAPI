@@ -1264,11 +1264,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyCorePoj\\Conversion-API\\Conversion-API\\Conversion-API.csproj",
+      "projectUniqueName": "D:\\ConversionAPI\\Conversion-API\\Conversion-API.csproj",
       "projectName": "Conversion-API",
-      "projectPath": "D:\\MyCorePoj\\Conversion-API\\Conversion-API\\Conversion-API.csproj",
+      "projectPath": "D:\\ConversionAPI\\Conversion-API\\Conversion-API.csproj",
       "packagesPath": "C:\\Users\\sagar.pawar\\.nuget\\packages\\",
-      "outputPath": "D:\\MyCorePoj\\Conversion-API\\Conversion-API\\obj\\",
+      "outputPath": "D:\\ConversionAPI\\Conversion-API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

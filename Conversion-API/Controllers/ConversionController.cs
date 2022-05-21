@@ -10,14 +10,17 @@ namespace ConversionAPI.Controllers
         private readonly ILogger<ConversionController> _logger;
         private readonly ITemperatureConvertService _temperatureConvertService;
         private readonly ILengthConvertService _lengthConvertService;
+        private readonly IDataConvertService _dataConvertService;
 
         public ConversionController(ILogger<ConversionController> logger, 
                 ITemperatureConvertService temperatureConvertService,
-                ILengthConvertService lengthConvertService)
+                ILengthConvertService lengthConvertService,
+                IDataConvertService dataConvertService)
         {
             _logger = logger;
             _temperatureConvertService = temperatureConvertService;
             _lengthConvertService = lengthConvertService;
+            _dataConvertService = dataConvertService;
         }
 
         /// <summary>
@@ -31,11 +34,7 @@ namespace ConversionAPI.Controllers
         [HttpGet("convert/temperature")]
         public async Task<IActionResult> ConvertTemperatureAsync(TemperatureUnit from = TemperatureUnit.Celsius, TemperatureUnit to = TemperatureUnit.Kelvin, double value = 10)
         {
-            if (from == to)
-            {
-                return BadRequest("From and To should not be same.");
-            }
-            return Ok($"From {from} to {to} : {await _temperatureConvertService.ConvertTemperatureAsync(from, to, value)}");
+            return Ok($"{value} {from} = {await _temperatureConvertService.ConvertTemperatureAsync(from, to, value)} {to}");
         }
 
         /// <summary>
@@ -53,7 +52,21 @@ namespace ConversionAPI.Controllers
             {
                 return BadRequest("From and To should not be same.");
             }
-            return Ok($"From {from} to {to} : {await _lengthConvertService.ConvertLenghtAsync(from, to, value)}");
+            return Ok($"{value} {from} = {await _lengthConvertService.ConvertLenghtAsync(from, to, value)} {to}");
+        }
+
+        /// <summary>
+        /// Convert Data
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        [HttpGet("convert/data")]
+        public async Task<IActionResult> ConvertDataAsync(DataUnit from, DataUnit to, double value = 10)
+        {
+            return Ok($"{value} {from} = {await _dataConvertService.ConvertDataAsync(from, to, value)} {to}");
         }
     }
 }
