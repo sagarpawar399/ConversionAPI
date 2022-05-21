@@ -2,9 +2,13 @@ using ConversionAPI.Cache;
 using ConversionAPI.Repository;
 using ConversionAPI.Services;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Host.UseSerilog((ctx, lc) => lc
+    .WriteTo.Console()
+    .WriteTo.Seq("http://localhost:5341"));
 
 // Add services to the container.
 builder.Services.AddScoped<ITemperatureConvertService, TemperatureConvertService>();
